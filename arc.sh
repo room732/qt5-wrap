@@ -7,7 +7,13 @@ if [ -z $NAME ]; then
     exit 1
 fi
 
-git archive --prefix "$NAME/" -o "$NAME.tar" HEAD
-git submodule foreach --recursive "git archive --prefix=$NAME/\$path/ --output=\$sha1.tar HEAD && tar --concatenate --file=$(pwd)/$NAME.tar \$sha1.tar && rm \$sha1.tar"
+RELSRCROOT=$(dirname $0)
+SRCROOT=$(readlink -e $RELSRCROOT)
 
+cd ${SRCROOT}/qt5
+
+git archive --prefix "$NAME/" -o "${SRCROOT}/$NAME.tar" HEAD
+git submodule foreach --recursive "git archive --prefix=$NAME/\$path/ --output=\$sha1.tar HEAD && tar --concatenate --file=${SRCROOT}/$NAME.tar \$sha1.tar && rm \$sha1.tar"
+
+cd ${SRCROOT}
 gzip "$NAME.tar"
