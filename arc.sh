@@ -73,7 +73,8 @@ tar -f "$archname" --wildcards --delete */translations/linguist_*
 # add missing tests for building
 tar --append --file=${SRCROOT}/$NAME.tar --wildcards qt5/*/tests/auto/cmake/*
 
+# optional compression
 #gzip "$NAME.tar"
 #time zstd "$NAME.tar" -f --ultra -22
-time zstd "$NAME.tar" -f -19
+#time zstd "$NAME.tar" -f -19
 
