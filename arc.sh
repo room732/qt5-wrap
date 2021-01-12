@@ -66,13 +66,9 @@ tar -f "$archname" --wildcards --delete */*.qdoc
 tar -f "$archname" --wildcards --delete */examples/
 tar -f "$archname" --wildcards --delete */example/
 tar -f "$archname" --wildcards --delete */tests/
-tar -f "$archname" --wildcards --delete */designer/
-tar -f "$archname" --wildcards --delete */assistant/
 tar -f "$archname" --wildcards --delete */translations/designer_*
 tar -f "$archname" --wildcards --delete */translations/assistant_*
 tar -f "$archname" --wildcards --delete */translations/linguist_*
-
-#linguist/
 
 # add missing tests for building
 tar --append --file=${SRCROOT}/$NAME.tar --wildcards qt5/*/tests/auto/cmake/*
