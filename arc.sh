@@ -55,7 +55,11 @@ qt5/qtwayland/ \
 qt5/qtwebchannel/ \
 qt5/qtwebengine/ \
 qt5/qtwebglplugin/ \
-qt5/qtwebview/
+qt5/qtwebview/ \
+qt5/qtlottie \
+qt5/qtquick3d \
+qt5/qtquicktimeline \
+qt5/qtshadertools
 
 tar -f "$archname" --wildcards --delete */dist/
 tar -f "$archname" --wildcards --delete */docs/
