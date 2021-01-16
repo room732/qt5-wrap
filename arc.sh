@@ -18,8 +18,7 @@ cd ${SRCROOT}
 archdir="qt5"
 archname="$archdir.tar"
 #tar --exclude-vcs -cvhf "$archname" "$archdir" <<<  !!!  NOT works
-tar --exclude='\.git/*' --exclude='\.gitmodules' --exclude='\.gitignore' --exclude='\.gitattributes' -cvhf "$archname" "$archdir"
-
+tar --exclude='\.git/*' --exclude='\.gitignore' --exclude='\.gitattributes' -cvhf "$archname" "$archdir"
 
 # delete tests, docs, examples, ...
 
@@ -62,7 +61,6 @@ qt5/qtquick3d/ \
 qt5/qtquicktimeline/ \
 qt5/qtshadertools/
 
-tar -f "$archname" --wildcards --delete *.git/
 tar -f "$archname" --wildcards --delete */dist/
 tar -f "$archname" --wildcards --delete */docs/
 tar -f "$archname" --wildcards --delete */doc/*/images/
