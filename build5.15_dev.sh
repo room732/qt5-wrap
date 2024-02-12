@@ -20,7 +20,7 @@ cd qt5
 		-nomake tests -nomake examples -no-compile-examples \
         -qpa xcb -xcb -xkbcommon -libudev -evdev -feature-thread \
 		-sql-mysql -sql-sqlite -no-icu -cups \
-		-shared -silent -debug
+		-shared -silent -debug -qt-freetype
 
 make -j"$(nproc)"
     
